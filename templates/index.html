@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SkinSight — Sistem Pakar Pendeteksi Masalah Kulit</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
+</head>
+<body>
+<div class="page">
+
+  <!-- ── HEADER ── -->
+  <div class="header">
+    <div class="header-eyebrow">✦ Sistem Pakar · Forward Chaining ✦</div>
+    <h1>Skin<em>Sight</em></h1>
+    <p>Kenali masalah kulitmu lebih dalam. Pilih gejala yang kamu rasakan dan sistem akan mendiagnosis kondisi kulitmu secara cerdas.</p>
+    <div class="header-ornament"><span>✿</span></div>
+  </div>
+
+  <!-- ── STEP BAR ── -->
+  <div class="steps-bar">
+    <div class="step-item">
+      <div class="step-dot active" id="dot1">1</div>
+      <div class="step-label active" id="lbl1">Pilih Gejala</div>
+    </div>
+    <div class="step-connector"></div>
+    <div class="step-item">
+      <div class="step-dot" id="dot2">2</div>
+      <div class="step-label" id="lbl2">Analisis</div>
+    </div>
+    <div class="step-connector"></div>
+    <div class="step-item">
+      <div class="step-dot" id="dot3">3</div>
+      <div class="step-label" id="lbl3">Hasil</div>
+    </div>
+  </div>
+
+  <!-- ── INPUT SECTION ── -->
+  <div id="inputSection">
+
+    <div class="info-bar">
+      <span class="info-bar-icon">💡</span>
+      <span>Pilih semua gejala yang <strong>saat ini kamu rasakan</strong> pada kulit wajahmu.
+      Sistem menggunakan metode <strong>Forward Chaining</strong> untuk mencocokkan
+      gejalamu dengan basis pengetahuan dan menentukan diagnosis.</span>
+    </div>
+
+    <!-- GRUP 1 -->
+    <div class="card">
+      <div class="card-step-num">Kelompok Gejala 01</div>
+      <div class="card-title">Kondisi Umum Kulit</div>
+      <div class="card-subtitle">Bagaimana kondisi permukaan kulitmu secara keseluruhan?</div>
+      <div class="symptom-grid">
+        <div class="symptom-item" data-id="g1_1" onclick="toggle(this)">
+          <div class="symptom-check">✓</div>
+          <div class="symptom-text">
+            <strong>Kulit terasa berminyak</strong>
+            <span>Terutama di area T-zone (dahi, hidung, dagu)</span>
+          </div>
+        </div>
+        <div class="symptom-item" data-id="g1_2" onclick="toggle(this)">
+          <div class="symptom-check">✓</div>
+          <div class="symptom-text">
+            <strong>Kulit terasa kering &amp; kencang</strong>
+            <span>Setelah cuci muka atau di pagi hari</span>
+          </div>
+        </div>
+        <div class="symptom-item" data-id="g1_3" onclick="toggle(this)">
+          <div class="symptom-check">✓</div>
+          <div class="symptom-text">
+            <strong>Kulit kombinasi</strong>
+            <span>Berminyak di beberapa area, kering di area lain</span>
+          </div>
+        </div>
+        <div class="symptom-item" data-id="g1_4" onclick="toggle(this)">
+          <div class="symptom-check">✓</div>
+          <div class="symptom-text">
+            <strong>Kulit terasa normal</strong>
+            <span>Tidak terlalu berminyak maupun kering</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- GRUP 2 -->
+    <div class="card">
+      <div class="card-step-num">Kelompok Gejala 02</div>
+      <div class="card-title">Masalah yang Terlihat</div>
+      <div class="card-subtitle">Apa yang tampak di permukaan kulitmu?</div>
+      <div class="symptom-grid">
+        <div class="symptom-item" data-id="g2_1" onclick="toggle(this)">
+          <div class="symptom-check">✓</div>
+          <div class="symptom-text">
+            <strong>Jerawat aktif / meradang</strong>
+            <span>Benjolan merah, bernanah, atau nyeri saat disentuh</span>
+          </div>
+        </div>
+        <div class="symptom-item" data-id="g2_2" onclick="toggle(this)">
+          <div class="symptom-check">✓</div>
+          <div class="symptom-text">
+            <strong>Komedo / blackhead</strong>
+            <span>Pori-pori tersumbat, titik hitam atau putih</span>
+          </div>
+        </div>
+        <div class="symptom-item" data-id="g2_3" onclick="toggle(this)">
+          <div class="symptom-check">✓</div>
+          <div class="symptom-text">
+            <strong>Flek / noda gelap</strong>
+            <span>Bekas jerawat, hiperpigmentasi, atau melasma</span>
+          </div>
+        </div>
+        <div class="symptom-item" data-id="g2_4" onclick="toggle(this)">
+          <div class="symptom-check">✓</div>
+          <div class="symptom-text">
+            <strong>Kulit kusam &amp; tidak cerah</strong>
+            <span>Tampak lelah, warna tidak merata</span>
+          </div>
+        </div>
+        <div class="symptom-item" data-id="g2_5" onclick="toggle(this)">
+          <div class="symptom-check">✓</div>
+          <div class="symptom-text">
+            <strong>Kemerahan / ruam</strong>
+            <span>Bercak merah, muncul sendiri atau setelah pakai produk</span>
+          </div>
+        </div>
+        <div class="symptom-item" data-id="g2_6" onclick="toggle(this)">
+          <div class="symptom-check">✓</div>
+          <div class="symptom-text">
+            <strong>Kulit mengelupas / flaky</strong>
+            <span>Kulit terkelupas halus terutama di pipi</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- GRUP 3 -->
+    <div class="card">
+      <div class="card-step-num">Kelompok Gejala 03</div>
+      <div class="card-title">Sensasi yang Dirasakan</div>
+      <div class="card-subtitle">Apa yang kamu rasakan secara fisik di kulit wajahmu?</div>
+      <div class="symptom-grid">
+        <div class="symptom-item" data-id="g3_1" onclick="toggle(this)">
+          <div class="symptom-check">✓</div>
+          <div class="symptom-text">
+            <strong>Gatal atau perih</strong>
+            <span>Terutama setelah kontak produk tertentu</span>
+          </div>
+        </div>
+        <div class="symptom-item" data-id="g3_2" onclick="toggle(this)">
+          <div class="symptom-check">✓</div>
+          <div class="symptom-text">
+            <strong>Pori-pori terasa besar</strong>
+            <span>Terlihat jelas terutama di hidung dan pipi</span>
+          </div>
+        </div>
+        <div class="symptom-item" data-id="g3_3" onclick="toggle(this)">
+          <div class="symptom-check">✓</div>
+          <div class="symptom-text">
+            <strong>Kulit sangat sensitif</strong>
+            <span>Mudah bereaksi terhadap produk atau cuaca</span>
+          </div>
+        </div>
+        <div class="symptom-item" data-id="g3_4" onclick="toggle(this)">
+          <div class="symptom-check">✓</div>
+          <div class="symptom-text">
+            <strong>Tekstur tidak rata</strong>
+            <span>Terasa kasar saat diraba, kulit tidak mulus</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="alert warn" id="alertWarn">⚠️ Pilih minimal 2 gejala agar diagnosis lebih akurat.</div>
+
+    <button class="btn btn-primary btn-full" id="btnDiagnose" onclick="diagnose()">
+      Mulai Analisis → Diagnosis
+    </button>
+
+  </div><!-- /inputSection -->
+
+  <!-- ── RESULT SECTION ── -->
+  <div class="result-section" id="resultSection">
+
+    <!-- Hero -->
+    <div class="result-hero">
+      <div class="result-hero-label">Hasil Diagnosis Sistem Pakar</div>
+      <div class="result-hero-title" id="resultTitle"></div>
+      <div class="result-hero-subtitle" id="resultSubtitle"></div>
+      <div class="confidence-row">
+        <div class="confidence-label">Tingkat Keyakinan</div>
+        <div class="confidence-bar-wrap">
+          <div class="confidence-bar" id="confBar"></div>
+        </div>
+        <div class="confidence-num" id="confNum"></div>
+      </div>
+    </div>
+
+    <!-- Detail cards -->
+    <div class="diag-grid" id="diagGrid"></div>
+
+    <!-- Ingredients -->
+    <div class="ingredient-section">
+      <div class="section-title">Bahan Aktif Skincare</div>
+      <div class="ingredient-group">
+        <div class="ingredient-group-title good">✓ Direkomendasikan</div>
+        <div class="tags" id="goodIngredients"></div>
+      </div>
+      <div class="ingredient-group">
+        <div class="ingredient-group-title bad">✗ Perlu Dihindari</div>
+        <div class="tags" id="badIngredients"></div>
+      </div>
+    </div>
+
+    <!-- Routine -->
+    <div class="routine-card">
+      <div class="section-title">Rutinitas Perawatan Kulit</div>
+      <div id="routineSteps"></div>
+    </div>
+
+    <!-- Rule trace -->
+    <div class="trace-card">
+      <div class="trace-title">Jejak Forward Chaining</div>
+      <div class="trace-subtitle">Rule-rule yang aktif dan menjadi dasar diagnosis sistem</div>
+      <div id="traceRules"></div>
+    </div>
+
+    <div class="reset-wrap">
+      <button class="btn btn-secondary" onclick="reset()" style="padding:12px 32px">
+        ← Ulangi Diagnosa
+      </button>
+    </div>
+
+  </div><!-- /resultSection -->
+
+</div>
+
+<script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>
