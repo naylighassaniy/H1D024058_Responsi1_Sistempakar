@@ -176,13 +176,6 @@ skinsight/
    - Rutinitas perawatan yang disarankan
    - Jejak rule forward chaining yang aktif
 6. Klik **"Ulangi Diagnosa"** untuk mencoba kombinasi gejala berbeda
-
----
-
-## 👩‍💻 Pengembang
-
-**Nayligha Ssaniy** — Mahasiswa Informatika Semester 4
-
----
+Link:skinsight-pakar.vercel.app
 
 *Responsi Kecerdasan Buatan 2026*
